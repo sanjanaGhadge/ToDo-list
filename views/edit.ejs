@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="main w-full min-h-screen bg-purple-400 text-white p-10">
+        <div class="task w-full max-w-3xl mx-auto bg-blue-500 p-5 rounded-md">
+            <a class="text-zinc-900 mt-5 inline-block" href="/">Back to tasks</a>
+            <h1 class="text-3xl mb-4">Edit Task</h1>
+            <form action="/update/<%= filename %>" method="post" enctype="multipart/form-data">
+                <input class="block w-full rounded-md px-5 py-2 outline-none bg-zinc-700 text-white mb-4" type="text" placeholder="Title" name="title" value="<%= title %>">
+                <textarea class="block w-full rounded-md px-5 py-2 outline-none bg-zinc-700 text-white mb-4" placeholder="Your task details" name="details"><%= content %></textarea>
+                <input class="block w-full rounded-md px-5 py-2 outline-none bg-zinc-700 text-white mb-4" type="file" name="image">
+                <input class="bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Update Task">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
